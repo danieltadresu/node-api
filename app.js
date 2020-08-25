@@ -4,8 +4,13 @@ const morgan = require('morgan');
 
 const bodyParser = require('body-parser');
 
+const mongoose = require('mongoose');
+
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
+
+// Connection to Mongoose
+mongoose.connect('mongodb://localhost/dbwizardv2', {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Morgan allow us PRINT the request in the console.
 app.use(morgan('dev'));
