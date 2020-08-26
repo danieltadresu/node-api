@@ -15,10 +15,12 @@ mongoose.connect('mongodb://localhost/dbwizardv2', {useNewUrlParser: true, useUn
 // Morgan allow us PRINT the request in the console.
 app.use(morgan('dev'));
 
+app.use('/uploads', express.static('uploads'));
 
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+
 
 app.use(bodyParser.json());
 
